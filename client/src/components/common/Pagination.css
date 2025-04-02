@@ -1,0 +1,55 @@
+Pagination.css
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.pagination-pages {
+  display: flex;
+  margin: 0 10px;
+}
+
+.pagination-button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid var(--light-gray);
+  cursor: pointer;
+  margin: 0 5px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background-color: var(--background-color);
+  border-color: var(--medium-gray);
+}
+
+.pagination-button.active {
+  background-color: var(--secondary-color);
+  color: white;
+  border-color: var(--secondary-color);
+}
+
+.pagination-button.ellipsis {
+  border: none;
+  pointer-events: none;
+}
+
+.pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-button.prev,
+.pagination-button.next {
+  width: 36px;
+  height: 36px;
+  font-size: 0.8rem;
+}

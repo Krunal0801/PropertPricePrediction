@@ -1,0 +1,129 @@
+.property-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+  }
+  
+  .property-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .property-link {
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+  }
+  
+  .property-image-container {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .property-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .property-card:hover .property-image {
+    transform: scale(1.05);
+  }
+  
+  .property-type-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  
+  .premium-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  
+  .bookmark-button {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: white;
+    color: var(--medium-gray);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .bookmark-button:hover {
+    color: var(--secondary-color);
+  }
+  
+  .bookmark-button.active {
+    color: var(--secondary-color);
+  }
+  
+  .property-content {
+    padding: 15px;
+  }
+  
+  .property-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+  }
+  
+  .property-title {
+    font-size: 1rem;
+    margin: 0 0 10px;
+    line-height: 1.3;
+    height: 2.6em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  
+  .property-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .property-detail {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+  }
+  
+  .property-detail i {
+    width: 20px;
+    margin-right: 8px;
+    color: var(--medium-gray);
+  }
+  

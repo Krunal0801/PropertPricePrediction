@@ -1,0 +1,19 @@
+{
+  "name": "propertypredictionapp",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "start": "concurrently \"npm run start:server\" \"npm run start:client\"",
+    "start:client": "npm start --workspace=client",
+    "start:server": "npm run dev --workspace=server",
+    "build": "npm run build --workspace=client",
+    "install:all": "npm install && npm install --workspace=client && npm install --workspace=server"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

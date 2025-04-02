@@ -1,0 +1,335 @@
+.prediction-page {
+    padding-bottom: 60px;
+  }
+  
+  .prediction-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .prediction-title {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+  }
+  
+  .prediction-subtitle {
+    font-size: 1.1rem;
+    color: var(--dark-gray);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .prediction-content {
+    display: flex;
+    gap: 40px;
+  }
+  
+  .prediction-form-container {
+    flex: 1;
+    max-width: 500px;
+  }
+  
+  .prediction-form-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .prediction-form {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    padding: 25px;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .form-group.half {
+    flex: 1;
+  }
+  
+  .predict-button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+  }
+  
+  .prediction-results {
+    flex: 2;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    padding: 25px;
+    min-height: 500px;
+  }
+  
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 300px;
+  }
+  
+  .loading-container p {
+    margin-top: 20px;
+    color: var(--dark-gray);
+  }
+  
+  .prediction-data h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .current-prediction {
+    margin-bottom: 30px;
+  }
+  
+  .future-heading {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .future-predictions {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .prediction-box {
+    padding: 20px;
+    background-color: var(--background-color);
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .prediction-box h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+  
+  .prediction-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+  }
+  
+  .price-per-sqft {
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+    margin-bottom: 10px;
+  }
+  
+  .future-box {
+    position: relative;
+  }
+  
+  .prediction-year {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+  
+  .growth-rate {
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
+  
+  .growth-rate span {
+    font-weight: 600;
+    color: var(--success-color);
+  }
+  
+  .price-trends {
+    margin-bottom: 30px;
+  }
+  
+  .price-trends h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .market-overview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .overview-stat {
+    padding: 15px;
+    background-color: var(--background-color);
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .stat-label {
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+    margin-bottom: 10px;
+  }
+  
+  .stat-value {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .bedroom-prices {
+    margin-bottom: 30px;
+  }
+  
+  .bedroom-prices h4 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .bedroom-chart {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 200px;
+    padding: 0 10px;
+  }
+  
+  .bedroom-bar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+  }
+  
+  .bedroom-label {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  
+  .bedroom-value {
+    font-size: 0.8rem;
+    color: var(--dark-gray);
+    margin-top: 5px;
+  }
+  
+  .prediction-disclaimer {
+    background-color: #f8f9fa;
+    border-left: 4px solid var(--warning-color);
+    padding: 15px;
+    margin-top: 20px;
+  }
+  
+  .prediction-disclaimer h4 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .prediction-disclaimer p {
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+    line-height: 1.5;
+  }
+  
+  .no-prediction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-height: 400px;
+  }
+  
+  .prediction-placeholder {
+    text-align: center;
+    max-width: 500px;
+  }
+  
+  .prediction-placeholder i {
+    font-size: 4rem;
+    color: var(--light-gray);
+    margin-bottom: 20px;
+  }
+  
+  .prediction-placeholder h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .prediction-placeholder p {
+    color: var(--dark-gray);
+    margin-bottom: 30px;
+  }
+  
+  .prediction-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    text-align: left;
+  }
+  
+  .feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .feature i {
+    font-size: 1rem;
+    color: var(--success-color);
+    margin-bottom: 0;
+  }
+  
+  @media (max-width: 1024px) {
+    .prediction-content {
+      flex-direction: column;
+    }
+    
+    .prediction-form-container {
+      max-width: 100%;
+    }
+    
+    .market-overview {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .future-predictions {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .form-row {
+      flex-direction: column;
+      gap: 0;
+    }
+    
+    .prediction-features {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .prediction-title {
+      font-size: 1.8rem;
+    }
+    
+    .future-predictions {
+      grid-template-columns: 1fr;
+    }
+    
+    .market-overview {
+      grid-template-columns: 1fr;
+    }
+  }

@@ -1,0 +1,53 @@
+.property-contact-form {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    padding: 25px;
+  }
+  
+  .contact-form-header {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .contact-form-header h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+  }
+  
+  .contact-form-header p {
+    color: var(--dark-gray);
+    font-size: 0.9rem;
+  }
+  
+  .form-success {
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .success-icon {
+    font-size: 3rem;
+    color: var(--success-color);
+    margin-bottom: 15px;
+  }
+  
+  .form-success h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .form-success p {
+    color: var(--dark-gray);
+  }
+  
+  .contact-button {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  @media (max-width: 576px) {
+    .property-contact-form {
+      padding: 20px;
+    }
+  }

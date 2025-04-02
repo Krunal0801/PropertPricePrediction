@@ -1,0 +1,174 @@
+ComparePage.css
+.compare-page {
+  padding-bottom: 60px;
+}
+
+.add-property-form {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.add-property-form .form-group {
+  flex: 1;
+}
+
+.no-properties {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.no-properties-icon {
+  font-size: 4rem;
+  color: var(--light-gray);
+  margin-bottom: 20px;
+}
+
+.no-properties h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.no-properties p {
+  color: var(--dark-gray);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.comparison-table-container {
+  overflow-x: auto;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.comparison-table th {
+  background-color: var(--background-color);
+  font-weight: 600;
+}
+
+.property-column {
+  min-width: 250px;
+}
+
+.feature-column {
+  width: 200px;
+  font-weight: 500;
+}
+
+.property-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.property-header h3 {
+  font-size: 1rem;
+  margin: 0;
+  flex: 1;
+}
+
+.remove-property-button {
+  background: none;
+  border: none;
+  color: var(--dark-gray);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.remove-property-button:hover {
+  color: var(--error-color);
+}
+
+.section-header {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+}
+
+.section-header td {
+  padding: 10px 15px;
+  position: relative;
+}
+
+.analysis-button {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.analyze-button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.evaluation-tag {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: white;
+}
+
+.evaluation-tag.underpriced {
+  background-color: var(--success-color);
+}
+
+.evaluation-tag.overpriced {
+  background-color: var(--error-color);
+}
+
+.evaluation-tag.fairly-priced {
+  background-color: var(--warning-color);
+}
+
+.action-link {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: var(--secondary-color);
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.action-link:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .add-property-form {
+    flex-direction: column;
+  }
+  
+  .property-column {
+    min-width: 200px;
+  }
+}

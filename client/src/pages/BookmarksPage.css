@@ -1,0 +1,70 @@
+BookmarksPage.css
+.bookmarks-page {
+  padding-bottom: 60px;
+}
+
+.page-header {
+  margin-bottom: 40px;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.page-subtitle {
+  color: var(--dark-gray);
+  font-size: 1.1rem;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.no-bookmarks {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.no-bookmarks-icon {
+  font-size: 4rem;
+  color: var(--light-gray);
+  margin-bottom: 20px;
+}
+
+.no-bookmarks h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.no-bookmarks p {
+  color: var(--dark-gray);
+  max-width: 500px;
+  margin: 0 auto 30px;
+}
+
+@media (max-width: 1024px) {
+  .properties-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .properties-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .page-title {
+    font-size: 1.8rem;
+  }
+}
