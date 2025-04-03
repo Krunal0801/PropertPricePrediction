@@ -10,103 +10,138 @@ const config = require('../config/config');
 // Get price prediction for a property
 exports.getPricePrediction = async (req, res) => {
   try {
-    const {
-      propertyType,
-      city,
-      locality,
-      bedroomNum,
-      furnishStatus,
-      area,
-      years = 5
-    } = req.body;
-
-    // Validate required fields
-    if (!propertyType || !city || !locality || !area) {
-      return res.status(400).json({
-        success: false,
-        message: 'Property type, city, locality, and area are required'
-      });
-    }
-
-    // Prepare data for Python script
-    const predictionData = JSON.stringify({
-      propertyType,
-      city,
-      locality,
-      bedroomNum: bedroomNum || null,
-      furnishStatus: furnishStatus || 0,
-      area: parseFloat(area),
-      years: parseInt(years)
-    });
+    // ...existing code...
 
     // Create temporary file with the data
     const tempFile = path.join(__dirname, '../python/temp', `prediction_data_${Date.now()}.json`);
+    console.log(`Creating temp file: ${tempFile}`);
     
     // Ensure temp directory exists
     const tempDir = path.dirname(tempFile);
+    console.log(`Temp directory: ${tempDir}`);
+    
     if (!fs.existsSync(tempDir)) {
+      console.log(`Creating temp directory: ${tempDir}`);
       fs.mkdirSync(tempDir, { recursive: true });
     }
     
     fs.writeFileSync(tempFile, predictionData);
+    console.log('Temp file created successfully');
 
     // Call Python script
-    const pythonScript = path.join(__dirname, '../python/price_prediction.py');
+    // const pythonScript = path.join(__dirname, '../python/price_prediction.py');
+    const pythonScript = path.join(__dirname, '../python/new_price_prediction.py');
+    console.log(`Python script path: ${pythonScript}`);
+    console.log(`Python executable: ${config.python.path}`);
+    
     const pythonProcess = spawn(config.python.path, [pythonScript, tempFile]);
+    console.log('Python process spawned');
 
-    let predictionResult = '';
-    let errorOutput = '';
-
-    // Collect output from Python script
-    pythonProcess.stdout.on('data', (data) => {
-      predictionResult += data.toString();
-    });
-
-    pythonProcess.stderr.on('data', (data) => {
-      errorOutput += data.toString();
-    });
-
-    // Handle process completion
-    pythonProcess.on('close', (code) => {
-      // Clean up temp file
-      if (fs.existsSync(tempFile)) {
-        fs.unlinkSync(tempFile);
-      }
-
-      if (code !== 0) {
-        console.error(`Python process exited with code ${code}`, errorOutput);
-        return res.status(500).json({
-          success: false,
-          message: 'Price prediction failed',
-          error: errorOutput
-        });
-      }
-
-      try {
-        const predictions = JSON.parse(predictionResult);
-
-        res.status(200).json({
-          success: true,
-          predictions
-        });
-      } catch (error) {
-        console.error('Error parsing prediction result:', error);
-        res.status(500).json({
-          success: false,
-          message: 'Failed to parse prediction result',
-          error: error.message
-        });
-      }
-    });
+    // ...rest of the code...
   } catch (error) {
     console.error('Price prediction error:', error);
-    res.status(500).json({
-      success: false,
-      message: 'Price prediction failed',
-      error: error.message
-    });
+    // ...rest of error handling...
   }
 };
+// exports.getPricePrediction = async (req, res) => {
+//   try {
+//     const {
+//       propertyType,
+//       city,
+//       locality,
+//       bedroomNum,
+//       furnishStatus,
+//       area,
+//       years = 5
+//     } = req.body;
+
+//     // Validate required fields
+//     if (!propertyType || !city || !locality || !area) {
+//       return res.status(400).json({
+//         success: false,
+//         message: 'Property type, city, locality, and area are required'
+//       });
+//     }
+
+//     // Prepare data for Python script
+//     const predictionData = JSON.stringify({
+//       propertyType,
+//       city,
+//       locality,
+//       bedroomNum: bedroomNum || null,
+//       furnishStatus: furnishStatus || 0,
+//       area: parseFloat(area),
+//       years: parseInt(years)
+//     });
+
+//     // Create temporary file with the data
+//     const tempFile = path.join(__dirname, '../python/temp', `prediction_data_${Date.now()}.json`);
+    
+//     // Ensure temp directory exists
+//     const tempDir = path.dirname(tempFile);
+//     if (!fs.existsSync(tempDir)) {
+//       fs.mkdirSync(tempDir, { recursive: true });
+//     }
+    
+//     fs.writeFileSync(tempFile, predictionData);
+
+//     // Call Python script
+//     const pythonScript = path.join(__dirname, '../python/price_prediction.py');
+//     const pythonProcess = spawn(config.python.path, [pythonScript, tempFile]);
+
+//     let predictionResult = '';
+//     let errorOutput = '';
+
+//     // Collect output from Python script
+//     pythonProcess.stdout.on('data', (data) => {
+//       predictionResult += data.toString();
+//     });
+
+//     pythonProcess.stderr.on('data', (data) => {
+//       errorOutput += data.toString();
+//     });
+
+//     // Handle process completion
+//     pythonProcess.on('close', (code) => {
+//       // Clean up temp file
+//       if (fs.existsSync(tempFile)) {
+//         fs.unlinkSync(tempFile);
+//       }
+
+//       if (code !== 0) {
+//         console.error(`Python process exited with code ${code}`, errorOutput);
+//         return res.status(500).json({
+//           success: false,
+//           message: 'Price prediction failed',
+//           error: errorOutput
+//         });
+//       }
+
+//       try {
+//         const predictions = JSON.parse(predictionResult);
+
+//         res.status(200).json({
+//           success: true,
+//           predictions
+//         });
+//       } catch (error) {
+//         console.error('Error parsing prediction result:', error);
+//         res.status(500).json({
+//           success: false,
+//           message: 'Failed to parse prediction result',
+//           error: error.message
+//         });
+//       }
+//     });
+//   } catch (error) {
+//     console.error('Price prediction error:', error);
+//     res.status(500).json({
+//       success: false,
+//       message: 'Price prediction failed',
+//       error: error.message
+//     });
+//   }
+// };
 
 // Get property recommendations for a user
 exports.getRecommendations = async (req, res) => {

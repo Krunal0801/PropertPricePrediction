@@ -116,10 +116,10 @@ const PredictionPage = () => {
       return false;
     }
     
-    if (!formData.locality) {
-      showToast('Please select a locality', 'warning');
-      return false;
-    }
+    // if (!formData.locality) {
+    //   showToast('Please select a locality', 'warning');
+    //   return false;
+    // }
     
     if (!formData.area) {
       showToast('Please enter the property area', 'warning');

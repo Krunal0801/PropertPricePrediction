@@ -133,15 +133,24 @@ exports.getPropertyById = async (req, res) => {
   }
 };
 
-//Get trending properties based on various factors
+// Modified getTrendingProperties function for server/controllers/property.controller.js
 exports.getTrendingProperties = async (req, res) => {
   try {
     const { limit = 10 } = req.query;
 
-    // Find properties that are popular (premium listings, newer, higher-priced)
-    const trendingProperties = await Property.find({ isPremium: true })
+    // Find properties that are popular - modified to always return results
+    // Even if no premium properties exist
+    const trendingProperties = await Property.find({})
       .sort({ createdAt: -1, price: -1 })
       .limit(parseInt(limit));
+
+    // If no properties found at all
+    if (trendingProperties.length === 0) {
+      return res.status(404).json({
+        success: false,
+        message: 'No properties found'
+      });
+    }
 
     res.status(200).json({
       success: true,
@@ -157,6 +166,31 @@ exports.getTrendingProperties = async (req, res) => {
     });
   }
 };
+
+//Get trending properties based on various factors
+// exports.getTrendingProperties = async (req, res) => {
+//   try {
+//     const { limit = 10 } = req.query;
+
+//     // Find properties that are popular (premium listings, newer, higher-priced)
+//     const trendingProperties = await Property.find({ isPremium: true })
+//       .sort({ createdAt: -1, price: -1 })
+//       .limit(parseInt(limit));
+
+//     res.status(200).json({
+//       success: true,
+//       count: trendingProperties.length,
+//       properties: trendingProperties
+//     });
+//   } catch (error) {
+//     console.error('Get trending properties error:', error);
+//     res.status(500).json({
+//       success: false,
+//       message: 'Failed to fetch trending properties',
+//       error: error.message
+//     });
+//   }
+// };
 // exports.getTrendingProperties = async (req, res) => {
 //   try {
 //     const { limit = 10 } = req.query;

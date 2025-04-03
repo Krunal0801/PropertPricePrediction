@@ -132,4 +132,5 @@ export const getPropertyImageUrl = (property) => {
   }
   
   return 'https://via.placeholder.com/300x200?text=No+Image+Available';
+  //return 'C:/NMIMS/SemII/AWT/Project/propertypredictionapp/server/uploads/property-images/5d7166928dbdb0813a03d4ab78960d21-cc_ft_960.jpg';
 };
