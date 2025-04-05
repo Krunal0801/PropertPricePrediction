@@ -1,0 +1,211 @@
+/* components/prediction/HotspotImpactDisplay.css */
+
+.hotspot-impact-container {
+    background-color: var(--background-color);
+    border-radius: 8px;
+    padding: 25px;
+    margin: 30px 0;
+    box-shadow: var(--box-shadow);
+  }
+  
+  .hotspot-impact-container h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    text-align: center;
+    color: var(--primary-color);
+  }
+  
+  .impact-description {
+    text-align: center;
+    color: var(--dark-gray);
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+  }
+  
+  .total-impact {
+    background-color: white;
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .impact-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .impact-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  
+  .impact-value {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+  
+  .impact-percentage {
+    color: var(--success-color);
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+  
+  .positive {
+    color: var(--success-color);
+  }
+  
+  .negative {
+    color: var(--error-color);
+  }
+  
+  .impact-bar-container {
+    height: 8px;
+    background-color: var(--light-gray);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .impact-bar {
+    height: 100%;
+    background-color: var(--success-color);
+    border-radius: 4px;
+  }
+  
+  .top-impacts {
+    background-color: white;
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .top-impacts h4 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+  }
+  
+  .hotspot-impact-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--light-gray);
+  }
+  
+  .hotspot-impact-item:last-child {
+    border-bottom: none;
+  }
+  
+  .impact-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(52, 152, 219, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    color: var(--secondary-color);
+    font-size: 1rem;
+  }
+  
+  .impact-info {
+    flex: 1;
+  }
+  
+  .impact-name {
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  
+  .impact-detail {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: var(--dark-gray);
+  }
+  
+  .impact-type {
+    padding: 2px 8px;
+    background-color: var(--background-color);
+    border-radius: 12px;
+  }
+  
+  .impact-distance {
+    color: var(--medium-gray);
+  }
+  
+  .impact-effect {
+    text-align: right;
+    padding-left: 10px;
+  }
+  
+  .impact-amount {
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+  
+  .impact-percent {
+    font-size: 0.85rem;
+    color: var(--success-color);
+  }
+  
+  .impact-notes {
+    background-color: white;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .impact-notes h4 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+  }
+  
+  .notes-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .notes-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+  
+  .notes-list li:last-child {
+    margin-bottom: 0;
+  }
+  
+  .notes-list i {
+    color: var(--secondary-color);
+    margin-right: 10px;
+    margin-top: 2px;
+    width: 20px;
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .impact-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+    }
+    
+    .hotspot-impact-item {
+      flex-wrap: wrap;
+    }
+    
+    .impact-effect {
+      width: 100%;
+      text-align: left;
+      margin-top: 8px;
+      padding-left: 55px;
+    }
+  }
