@@ -5,6 +5,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
 const { spawn } = require('child_process');
+const fs = require('fs');
 
 // Load environment variables
 dotenv.config();
@@ -39,6 +40,12 @@ app.get('/', (req, res) => {
   res.send('Property Prediction API is running');
 });
 
+const modelsDir = path.join(__dirname, 'python', 'models');
+
+if (!fs.existsSync(modelsDir)) {
+  fs.mkdirSync(modelsDir, { recursive: true });
+  console.log(`Created models directory: ${modelsDir}`);
+}
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => {

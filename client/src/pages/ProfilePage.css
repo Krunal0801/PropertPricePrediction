@@ -323,3 +323,91 @@
       align-self: flex-end;
     }
   }
+
+  /* Add these to your existing PredictionPage.css */
+
+.location-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.location-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 8px;
+}
+
+.toggle-text {
+  font-size: 0.9rem;
+}
+
+.location-detected {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--success-color);
+  margin-top: 8px;
+}
+
+.location-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background-color: var(--success-color);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
+
+.nearby-info {
+  background-color: var(--background-color);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 30px 0;
+}
+
+.nearby-info h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.nearby-stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.stat-item {
+  flex: 1;
+  min-width: 150px;
+  text-align: center;
+  padding: 10px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: var(--box-shadow);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--dark-gray);
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+}

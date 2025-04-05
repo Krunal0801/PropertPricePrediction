@@ -1,9 +1,19 @@
 import api from './api';
 
 // Get price prediction
+// export const getPricePrediction = async (propertyData) => {
+//   try {
+//     const response = await api.post('/predictions/price', propertyData);
+//     return response.data;
+//   } catch (error) {
+//     console.error('Error getting price prediction:', error);
+//     throw error;
+//   }
+// };
 export const getPricePrediction = async (propertyData) => {
   try {
     const response = await api.post('/predictions/price', propertyData);
+    console.log('Price Prediction Response:', response.data);
     return response.data;
   } catch (error) {
     console.error('Error getting price prediction:', error);

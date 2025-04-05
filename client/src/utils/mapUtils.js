@@ -15,26 +15,46 @@ export const calculateDistance = (lat1, lon1, lat2, lon2) => {
     return distance;
   };
   
-  // Get user's current location
-  export const getCurrentLocation = () => {
-    return new Promise((resolve, reject) => {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          (position) => {
-            resolve({
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            });
-          },
-          (error) => {
-            reject(error);
-          }
-        );
-      } else {
-        reject(new Error('Geolocation is not supported by this browser.'));
-      }
-    });
-  };
+  // // Get user's current location
+  // export const getCurrentLocation = () => {
+  //   return new Promise((resolve, reject) => {
+  //     if (navigator.geolocation) {
+  //       navigator.geolocation.getCurrentPosition(
+  //         (position) => {
+  //           resolve({
+  //             lat: position.coords.latitude,
+  //             lng: position.coords.longitude
+  //           });
+  //         },
+  //         (error) => {
+  //           reject(error);
+  //         }
+  //       );
+  //     } else {
+  //       reject(new Error('Geolocation is not supported by this browser.'));
+  //     }
+  //   });
+  // };
+  // utils/mapUtils.js
+export const getCurrentLocation = () => {
+  return new Promise((resolve, reject) => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          resolve({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          });
+        },
+        (error) => {
+          reject(error);
+        }
+      );
+    } else {
+      reject(new Error('Geolocation is not supported by this browser.'));
+    }
+  });
+};
   
   // Generate Google Maps URL
   export const generateGoogleMapsUrl = (latitude, longitude, label = 'Location') => {
